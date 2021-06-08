@@ -118,6 +118,7 @@ const TrackerManagement = () => {
                     disabled={disabled}
                     style={{ fontWeight: 'bold', marginRight: 6 }}
                     disableRipple
+                    onClick={() => alert('Coming soon...')}
                 >
                     Start Tracking
             </Button >

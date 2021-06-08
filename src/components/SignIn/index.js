@@ -57,7 +57,7 @@ const SignInSymbl = () => {
         }
 
         try {
-            await authenticateSymbl(payload)
+            const token = await authenticateSymbl(payload)
             setIsLoading(false)
             history.push("/trackers");
         } catch (e) {

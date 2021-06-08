@@ -9,7 +9,7 @@ const AuthRoute = ({ children, ...rest }) => {
         <Route {...rest} render={() => {
             return isAuthenticated
                 ? children
-                : <Redirect to='/signin' />
+                : <Redirect to='/' />
         }} />
     );
 };

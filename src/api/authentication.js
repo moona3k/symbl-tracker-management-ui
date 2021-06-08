@@ -15,8 +15,7 @@ export const authenticateSymbl = ({ appId, appSecret }) => {
         },
       })
       .then((response) => {
-        if (response.ok) resolve(response.json())
-        reject(response)
+        if (response.ok) return response.json()
       })
       .then((json) => {
         if (json.accessToken) {
