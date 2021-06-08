@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from "@material-ui/core/styles";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import TrackerManagement from './components/TrackerManagement'
 import SignIn from './components/SignIn'
@@ -10,6 +10,7 @@ import theme from './theme'
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
+      <Redirect to='/trackers' />
       <Switch>
         <Route exact path='/'>
           <SignIn />
