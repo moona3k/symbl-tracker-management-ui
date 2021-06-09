@@ -3,13 +3,13 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from "@material-ui/core/Typography";
 
 import * as ManagementAPI from '../../api/management'
-import JsonPreview from './JsonPreview'
+// import JsonPreview from './JsonPreview'
 import TrackerCard from './TrackerCard'
 import DeleteButton from './DeleteButton'
 import CreateTrackerForm from './CreateTrackerForm'
-import Button from "@material-ui/core/Button";
-import IconButton from '@material-ui/core/IconButton';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+// import Button from "@material-ui/core/Button";
+// import IconButton from '@material-ui/core/IconButton';
+// import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const sortByAlphabet = trackers => {
     let sorted = [...trackers]
@@ -111,7 +111,7 @@ const TrackerManagement = () => {
                     })
                 }
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: 32 }}>
+            {/* <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: 32 }}>
                 <Button
                     variant='contained'
                     color='secondary'
@@ -133,7 +133,7 @@ const TrackerManagement = () => {
                         </IconButton>
                     )}
                 />
-            </div>
+            </div> */}
         </div >
     )
 }
