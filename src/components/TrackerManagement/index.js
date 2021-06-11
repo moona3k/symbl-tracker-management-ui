@@ -26,6 +26,7 @@ const TrackerManagement = () => {
     const [trackers, setTrackers] = React.useState([])
     const [selected, setSelected] = React.useState([])
     const [isFetching, setIsFetching] = React.useState(true)
+    const [tokenExpired, setTokenExpired] = React.useState(false)
     const [deleteRequest, setDeleteRequest] = React.useState(false)
 
     React.useEffect(() => {
@@ -37,12 +38,15 @@ const TrackerManagement = () => {
                 setTrackers(payload)
             } catch (e) {
                 console.log('Trackers fetch from Management API failed', e)
+                setTokenExpired(true)
+                window.localStorage.clear()
             }
             setIsFetching(false)
         }
 
         fetchAllTrackers()
     }, [])
+
 
     const selectTracker = (tracker) => {
         setSelected([
@@ -58,9 +62,26 @@ const TrackerManagement = () => {
 
     const disabled = selected.length === 0 || deleteRequest
 
+    if (tokenExpired) return (
+        <div style={{ width: '100%', height: '400px', flexDirection: 'column', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Typography variant='h5' display='block'>Access token needs to be refreshed.</Typography>
+            <Button
+                variant='contained'
+                color='secondary'
+                style={{ fontWeight: 'bold', marginTop: 20 }}
+                disableRipple
+                onClick={() => {
+                    let url = new URL(window.location.href)
+                    window.location.href = url.origin
+                }}
+            >
+                Back to Sign-in
+            </Button >
+        </div>
+    )
     if (isFetching) return (
         <div style={{ width: '100%' }}>
-            <LinearProgress style={{ color: 'grey' }} />
+            <LinearProgress color='secondary' />
         </div>
     )
     return (
