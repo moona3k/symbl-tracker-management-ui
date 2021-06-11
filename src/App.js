@@ -8,12 +8,17 @@ import AuthRoute from './AuthRoute'
 import theme from './theme'
 
 const App = () => {
+  const isAuthenticated = !!window.localStorage.getItem(tokenKey)
+
   return (
     <ThemeProvider theme={theme}>
-      <Redirect to='/trackers' />
       <Switch>
         <Route exact path='/'>
-          <SignIn />
+          {
+            isAuthenticated
+              ? <Redirect to='/trackers' />
+              : <SignIn />
+          }
         </Route>
         <AuthRoute path='/trackers'>
           <TrackerManagement />
