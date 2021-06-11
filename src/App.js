@@ -6,6 +6,7 @@ import TrackerManagement from './components/TrackerManagement'
 import SignIn from './components/SignIn'
 import AuthRoute from './AuthRoute'
 import theme from './theme'
+import { tokenKey } from './config'
 
 const App = () => {
   const isAuthenticated = !!window.localStorage.getItem(tokenKey)
