@@ -57,11 +57,10 @@ const SignInSymbl = () => {
         }
 
         try {
-            const token = await authenticateSymbl(payload)
+            await authenticateSymbl(payload)
             setIsLoading(false)
             history.push("/trackers");
         } catch (e) {
-            console.log('this is e', e)
             setIsLoading(false)
             setIsError(true)
         }
@@ -112,7 +111,7 @@ const SignInSymbl = () => {
                                 ? (
                                     <div style={{ display: 'flex', alignItems: 'center' }}>
                                         <CircularProgress size={16} style={{ marginRight: '15px', color: '#888' }} />
-                                    Please wait...
+                                        Please wait...
                                     </div>
                                 )
                                 : `Sign In`

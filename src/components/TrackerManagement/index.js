@@ -33,7 +33,7 @@ const TrackerManagement = () => {
         const fetchAllTrackers = async () => {
             try {
                 const data = await ManagementAPI.fetchAllTrackers()
-                // console.log('Trackers fetched from Management API', data)
+                console.log('Trackers fetched from Management API', data)
                 const payload = sortByAlphabet(data.trackers)
                 setTrackers(payload)
             } catch (e) {
@@ -93,8 +93,8 @@ const TrackerManagement = () => {
                 <Typography variant='caption' display='block'>Happy Tracking!</Typography>
                 <Typography variant='caption' display='block' style={{ marginTop: 8 }}>
                     Please refer to <a target="_blank" rel="noopener noreferrer" href='https://docs.symbl.ai/docs/'>Symbl Documentations</a>
-            &nbsp;to learn more about <a target="_blank" rel="noopener noreferrer" href='https://docs.symbl.ai/docs/concepts/trackers/'>Trackers</a>
-            &nbsp;and <a target="_blank" rel="noopener noreferrer" href='https://docs.symbl.ai/docs/management-api/introduction/'>Management API.</a>
+                    &nbsp;to learn more about <a target="_blank" rel="noopener noreferrer" href='https://docs.symbl.ai/docs/concepts/trackers/'>Trackers</a>
+                    &nbsp;and <a target="_blank" rel="noopener noreferrer" href='https://docs.symbl.ai/docs/management-api/introduction/'>Management API.</a>
                 </Typography>
             </div>
             <div style={{ display: 'flex', marginTop: 32, marginBottom: 12 }}>

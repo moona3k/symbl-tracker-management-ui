@@ -95,8 +95,6 @@ const TrackerForm = ({ trackers, setTrackers, isEditMode = false, tracker = {} }
             value: item, touched: false, hasError: false, error: ""
         }))
     }
-    console.log('i am tracker', tracker)
-    console.log('i am tracker state', trackerState)
 
     if (!trackerState) trackerState = initialState
 
@@ -388,7 +386,7 @@ const TrackerForm = ({ trackers, setTrackers, isEditMode = false, tracker = {} }
                                     ? (
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <CircularProgress size={16} style={{ marginRight: '15px', color: '#888' }} />
-                                    Creating Tracker
+                                            Creating Tracker
                                         </div>
                                     )
                                     : isEditMode ? `Edit Tracker` : `Create New Tracker`

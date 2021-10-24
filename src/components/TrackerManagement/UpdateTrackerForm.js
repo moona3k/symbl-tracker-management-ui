@@ -358,7 +358,7 @@ const UpdateTrackerForm = ({ trackers, setTrackers, tracker, deleteRequest }) =>
                                     ? (
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <CircularProgress size={16} style={{ marginRight: '15px', color: '#888' }} />
-                                    Updating Tracker
+                                            Updating Tracker
                                         </div>
                                     )
                                     : `Update Tracker`
